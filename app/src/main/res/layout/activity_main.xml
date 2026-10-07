@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Contador de Puntos Principales -->
+    <TextView
+        android:id="@+id/tvPuntos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puntos: 0"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#212121"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"/>
+
+    <!-- Contenedor para CPS Actual y Máximo CPS -->
+    <LinearLayout
+        android:id="@+id/layoutCps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tvPuntos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tvCps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CPS: 0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#1976D2"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/tvMaxCps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Máx CPS: 0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#D32F2F"/>
+    </LinearLayout>
+
+    <!-- Imagen de la Mascota -->
+    <ImageView
+        android:id="@+id/ivMascota"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:contentDescription="Mascota Virtual"
+        android:src="@android:drawable/btn_star_big_on"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/layoutCps"
+        app:layout_constraintBottom_toTopOf="@id/tvMensaje"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Mensaje / Globo de Diálogo -->
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¡Hola! Tócame para jugar conmigo."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textColor="#555555"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="48dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
