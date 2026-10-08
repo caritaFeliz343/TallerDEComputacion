@@ -3,9 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <!-- Contador de Puntos Principales -->
@@ -53,6 +55,51 @@
             android:textColor="#D32F2F"/>
     </LinearLayout>
 
+    <!-- Indicador y Barra de Felicidad -->
+    <TextView
+        android:id="@+id/tvFelicidadEtiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Felicidad: 100%"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#388E3C"
+        app:layout_constraintTop_toBottomOf="@id/layoutCps"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <ProgressBar
+        android:id="@+id/pbFelicidad"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="16dp"
+        android:max="100"
+        android:progress="100"
+        app:layout_constraintTop_toBottomOf="@id/tvFelicidadEtiqueta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="4dp"/>
+
+    <!-- Banner Destacado para el QTE (Invisible por defecto) -->
+    <TextView
+        android:id="@+id/tvQteBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="⚡ ¡EVENTO RÁPIDO! ¡ALCANZA 12 CPS! ⚡"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#D32F2F"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/pbFelicidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
     <!-- Imagen de la Mascota -->
     <ImageView
         android:id="@+id/ivMascota"
@@ -62,7 +109,7 @@
         android:src="@android:drawable/btn_star_big_on"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintTop_toBottomOf="@id/layoutCps"
+        app:layout_constraintTop_toBottomOf="@id/tvQteBanner"
         app:layout_constraintBottom_toTopOf="@id/tvMensaje"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
