@@ -3,9 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <!-- Contador de Puntos Principales -->
@@ -80,6 +82,24 @@
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="4dp"/>
 
+    <!-- Banner Destacado para el QTE (Invisible por defecto) -->
+    <TextView
+        android:id="@+id/tvQteBanner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="⚡ ¡EVENTO RÁPIDO! ¡ALCANZA 12 CPS! ⚡"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#D32F2F"
+        android:padding="12dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/pbFelicidad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
     <!-- Imagen de la Mascota -->
     <ImageView
         android:id="@+id/ivMascota"
@@ -89,7 +109,7 @@
         android:src="@android:drawable/btn_star_big_on"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintTop_toBottomOf="@id/pbFelicidad"
+        app:layout_constraintTop_toBottomOf="@id/tvQteBanner"
         app:layout_constraintBottom_toTopOf="@id/tvMensaje"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
