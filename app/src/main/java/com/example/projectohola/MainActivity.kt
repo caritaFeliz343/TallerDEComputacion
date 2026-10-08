@@ -150,7 +150,6 @@ class MainActivity : AppCompatActivity() {
         qteActivo = true
         qteCompletado = false
 
-        // Cambios visuales de alerta activa
         mainLayout.setBackgroundColor(Color.parseColor("#FFEBEE")) // Fondo rojo suave
         tvQteBanner.visibility = View.VISIBLE
         tvMensaje.text = "⚡ ¡DALE RÁPIDO! LLEGA A 12 CPS ⚡"
@@ -162,7 +161,6 @@ class MainActivity : AppCompatActivity() {
         qteActivo = false
         handler.removeCallbacks(qteTimerRunnable)
 
-        // Restaurar interfaz a estado normal
         mainLayout.setBackgroundColor(Color.WHITE)
         tvQteBanner.visibility = View.GONE
 
